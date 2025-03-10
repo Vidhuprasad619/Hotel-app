@@ -1,0 +1,4 @@
+<template>
+    <ViewHero />
+    <ViewHotelData />
+</template>

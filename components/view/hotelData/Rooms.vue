@@ -1,10 +1,10 @@
 <template>
-    <div class="pt-2.5 border-t border-gray-100 flex gap-4 first:pt-0 first:border-none">
+    <div class="pt-2.5 border-t border-gray-100 flex gap-4 flex-col sm:flex-row justify-between first:pt-0 first:border-none">
         <div class="flex flex-col justify-center">
             <h6 class="text-black mb-2.5 capitalize font-medium">Deluxe Room</h6>
-            <img src="/images/hotels/hotel1/three.webp" class="w-[137px] h-[91px]" alt="image">
+            <img src="/images/hotels/hotel1/three.webp" class="w-full h-auto md:min-w-[137px] md:min-h-[91px] md:w-[20dvw] md:h-[15dvw]" alt="image">
         </div>
-        <div class="p-4 flex gap-8">
+        <div class="py-2.5 md:p-4 flex gap-[10dvw] justify-between">
             <div>
                 <h6 class="text-black mb-2.5 capitalize font-medium">Amenities</h6>
                 <ul class="flex flex-col gap-2">
@@ -44,7 +44,7 @@
                 </ul>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-end">
+        <div class="flex flex-col justify-center items-start md:items-end">
             <p class="line-through text-sm mb-1">$1250</p>
             <h4 class="font-medium">$1000</h4>
             <p class="text-sm mb-1">per night</p>

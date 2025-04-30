@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-
 const tabs = ['Popular', 'Amenities', 'Star Rating']
 const activeTab = ref('Popular')
 
@@ -28,7 +26,7 @@ const clearFilters = () => {
 </script>
 
 <template>
-    <aside class="w-full h-fit md:w-64 bg-white p-4 rounded shadow-sm md:sticky md:top-6">
+    <aside class="w-full h-fit md:w-64 bg-white p-4 rounded shadow-md md:sticky md:top-6">
         <h2 class="font-semibold text-lg mb-4">Filters</h2>
 
         <!-- Tabs -->

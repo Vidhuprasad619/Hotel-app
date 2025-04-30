@@ -27,7 +27,7 @@ import Polaroid from '~/components/ui/Polaroid.vue';
 </script>
 
 <template>
-    <div class="main-container">
+    <div class="main-container md:mt-5">
         <div class="max-container flex flex-col gap-y-5 bg-blue-50 rounded-[12px] mb-5">
             <h1 class="font-semibold text-center">
                  Ultimate Destination for <span class="md:block" /> Experiencing <span class="text-blue-400">Kosher</span>  like never Before

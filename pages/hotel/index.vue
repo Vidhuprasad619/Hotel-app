@@ -135,8 +135,8 @@ const sortedHotels = computed(() => {
 </script>
 
 <template>
-    <div class="bg-[#F9FAFB] min-h-screen py-6">
-        <div class="max-w-7xl mx-auto px-4">
+    <div class="main-container bg-slate-50">
+        <div class="max-container">
             <!-- Sort & Title -->
             <div class="mb-4 flex flex-col md:flex-row justify-between md:items-center gap-2">
                 <h2 class="text-lg font-semibold text-gray-800">Showing Properties in Maldives</h2>
@@ -155,6 +155,11 @@ const sortedHotels = computed(() => {
                     <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="min-h-screen py-6" style="background-color: #f9fafb;">
+        <div class="max-w-7xl mx-auto px-4">
+            
         </div>
     </div>
 </template>

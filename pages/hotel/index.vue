@@ -141,8 +141,8 @@ const sortedHotels = computed(() => {
             <!-- Sort & Title -->
             <div class="mb-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                 <h2 class="text-lg font-semibold text-gray-800">Showing Properties in Maldives</h2>
-                <div class="relative w-full sm:w-44 text-sm">
-                    <select v-model="activeSort" class="w-full border border-gray-300 rounded px-3 py-2 text-gray-700">
+                <div class="relative w-full sm:w-fit text-sm">
+                    <select v-model="activeSort" class="w-full border border-gray-300 rounded px-3 py-2 text-gray-700 cursor-pointer">
                         <option value="Popular">Popular</option>
                         <option value="Rating">User Rating</option>
                         <option value="PriceLowToHigh">Price (Low to High)</option>
@@ -151,7 +151,7 @@ const sortedHotels = computed(() => {
                 </div>
             </div>
             <!-- Grid Layout -->
-            <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-col md:flex-row md:justify-between gap-6">
                 <HotelFilters />
                 <div class="space-y-4">
                     <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />

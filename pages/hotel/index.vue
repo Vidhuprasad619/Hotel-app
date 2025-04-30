@@ -151,7 +151,7 @@ const sortedHotels = computed(() => {
                 </div>
             </div>
             <!-- Grid Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-[250px,1fr] gap-6">
+            <div class="flex flex-col md:flex-row gap-6">
                 <HotelFilters />
                 <div class="space-y-4">
                     <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />

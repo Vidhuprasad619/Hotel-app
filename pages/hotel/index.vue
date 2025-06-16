@@ -137,6 +137,15 @@ const sortedHotels = computed(() => {
 <template>
     <div class="main-container bg-slate-50">
         <div class="max-container">
+            <div class="border-b border-white/70 mb-5">
+                <h1 class="text-5xl text-black font-semibold mb-2">
+                    Restaurants in Bangalore
+                </h1>
+                <p class="pb-5">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, minima porro. Quasi fugit impedit quibusdam. Vitae molestiae quod nisi similique sit. Laudantium itaque cupiditate, quo fugit quisquam quas mollitia rerum.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea ipsum hic quos omnis quisquam beatae explicabo quam aspernatur repellat tempora fugiat alias vitae reiciendis, nam doloremque delectus distinctio quidem. Natus?
+                </p>
+            </div>
             <!-- Sort & Title -->
             <div class="mb-4 flex flex-col md:flex-row justify-between md:items-center gap-2">
                 <h2 class="text-lg font-semibold text-gray-800">Showing Properties in Maldives</h2>

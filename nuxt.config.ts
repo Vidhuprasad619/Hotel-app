@@ -8,4 +8,5 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/icon',
   ],
+  ssr: true,
 })

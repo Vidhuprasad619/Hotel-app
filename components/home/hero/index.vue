@@ -30,7 +30,7 @@ import Polaroid from '~/components/ui/Polaroid.vue';
     <div class="main-container md:mt-5">
         <div class="max-container flex flex-col gap-y-5 bg-blue-50 rounded-[12px] mb-5">
             <h1 class="font-semibold text-center">
-                 Ultimate Destination for <span class="md:block" /> Experiencing <span class="text-blue-400">Kosher</span>  like never Before
+                 Bengaluru for <span class="md:block" /> Experiencing <span class="text-blue-400">Kosher</span>  like never Before
             </h1>
             <p class="text-[#334155] text-center md:mt-3">
                 Discover delicious kosher food, drinks, and entertainment for a flavorful and fun experience

@@ -2,19 +2,17 @@
   "$schema": "https://shadcn-vue.com/schema.json",
   "style": "default",
   "typescript": true,
+  "tsConfigPath": ".nuxt/tsconfig.json",
   "tailwind": {
-    "config": "",
+    "config": "tailwind.config.js",
     "css": "assets/css/tailwind.css",
     "baseColor": "slate",
     "cssVariables": true,
     "prefix": ""
   },
+  "framework": "nuxt",
   "aliases": {
     "components": "@/components",
-    "composables": "@/composables",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib"
-  },
-  "iconLibrary": "lucide"
+    "utils": "@/lib/utils"
+  }
 }

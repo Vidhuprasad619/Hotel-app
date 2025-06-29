@@ -74,7 +74,7 @@ const data = [
 <template>
     <div class="main-container bg-slate-50">
         <div class="max-container bg-white rounded-[12px] shadow-lg mb-5">
-            <h3 class="text-black font-semibold mb-4">Unlock Lesser-Known Wonders of India</h3>
+            <h3 class="text-black font-semibold mb-4">Unwind the wonders around garden City</h3>
             <Carousel :opts="{
                 align: 'start',
             }" class="relative w-full">

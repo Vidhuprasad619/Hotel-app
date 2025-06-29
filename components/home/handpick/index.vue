@@ -86,7 +86,7 @@ const data = [
 <template>
     <div class="main-container bg-slate-50">
         <div class="max-container bg-white rounded-[12px] shadow-lg mb-5">
-            <h3 class="text-black font-semibold">Handpicked Collections for You</h3>
+            <h3 class="text-black font-semibold">Find Your Stay — Experience the Bengaluru Way.</h3>
             <div class="pl-1.5 pt-1.5 pb-2.5 mt-9 flex w-full">
                 <Carousel :opts="{
                     align: 'start',

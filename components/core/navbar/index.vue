@@ -90,9 +90,9 @@ function closeSidebar() {
       <div class="flex items-center">
         <NuxtLink to="/" class="flex items-center">
           <img
-            src="https://via.placeholder.com/120x40/6366f1/ffffff?text=BRAND"
+            src="/images/logo/logo.png"
             alt="Brand Logo"
-            class="h-8 w-auto sm:h-10"
+            class="h-14 w-auto"
           >
         </NuxtLink>
       </div>

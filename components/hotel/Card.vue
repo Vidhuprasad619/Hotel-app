@@ -11,10 +11,10 @@ const formatPrice = (price) => {
 
 <template>
     <div
-        class="bg-white shadow rounded-lg overflow-hidden flex flex-col md:flex-row transition hover:shadow-md hover:scale-[1.01] duration-200">
-        <router-link :to="`/hotels/${hotel.id}`" class="flex-1">
+        class="md:ml-5 bg-white shadow rounded-lg overflow-hidden flex flex-col md:flex-row transition hover:shadow-md hover:scale-[1.01] duration-200">
+        <router-link :to="`/hotels/${hotel.id}`" class="flex items-center">
             <!-- Hotel Image -->
-            <img :src="hotel.image" class="w-full h-52 md:w-48 md:h-auto object-cover transition-transform transform"
+            <img :src="hotel.image" class="w-full h-52 md:w-48 md:h-auto object-cover transition-transform transform shadow-md border-4 border-gray-200"
                 alt="Hotel Image" />
         </router-link>
 

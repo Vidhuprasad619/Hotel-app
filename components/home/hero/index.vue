@@ -4,24 +4,24 @@ import Polaroid from '~/components/ui/Polaroid.vue';
 
     const polaroids = [
         {
-            image: '/images/home/polaroid/polaroid3.jpg',
-            caption: 'Kosher Guru is a fantastic resource ',
-            name: 'Aleena'
+            image: '/images/hotels/hotel1/bt-hero-section-flight.png',
+            caption: 'Best Deals on Flights Await ',
+            
         },
         {
-            image: '/images/home/polaroid/polaroid1.jpg',
-            caption: 'Kosher Guru is a fantastic resource ',
-            name: 'Aleena'
+            image: '/images/hotels/hotel1/bt-hero-resort-final.jpg',
+            caption: 'Rest Well. Eat Well. Feel Whole.',
+            
         },
         {
-            image: '/images/home/polaroid/polaroid2.jpg',
-            caption: 'Kosher Guru is a fantastic resource ',
-            name: 'Aleena'
+            image: '/images/hotels/hotel1/bt-hero-section-bangalore-nightlife.jpeg',
+            caption: 'A Tale of Tradition, Trends, and Tech Life ',
+            
         },
         {
-            image: '/images/home/polaroid/polaroid4.jpg',
-            caption: 'Kosher Guru is a fantastic resource ',
-            name: 'Aleena'
+            image: '/images/hotels/hotel1/bt-hero-restaurants.webp',
+            caption: 'Every meal feels like a vacation ',
+            
         }
     ]
 </script>
@@ -30,10 +30,11 @@ import Polaroid from '~/components/ui/Polaroid.vue';
     <div class="main-container md:mt-5">
         <div class="max-container flex flex-col gap-y-5 bg-blue-50 rounded-[12px] mb-5">
             <h1 class="font-semibold text-center">
-                 Ultimate Destination for <span class="md:block" /> Experiencing <span class="text-blue-400">Kosher</span>  like never Before
+                  Find Flights. Getaways. City Life. One simple search
+
             </h1>
             <p class="text-[#334155] text-center md:mt-3">
-                Discover delicious kosher food, drinks, and entertainment for a flavorful and fun experience
+                Whats Hot in the City? This is Bangalore Today Has Spoken!!! Eat, Sip & Celebrate in Style
             </p>
             <div class="flex w-full md:w-fit items-center justify-center mx-auto relative">
                 <Combobox />

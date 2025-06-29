@@ -8,19 +8,19 @@ import {
 
 const navItems = [
     {
-        item: 'Menu 1',
+        item: 'Travel Package',
+        list: ['Bangalore to Ooty', 'Bangalore to Gokarna', 'Bangalore to Tirupati', 'Bangalore to Rameshwaram']
+    },
+    {
+        item: 'Flights',
         list: ['list 1', 'list 2', 'list 3', 'list 4']
     },
     {
-        item: 'Menu 2',
+        item: 'City Guide',
         list: ['list 1', 'list 2', 'list 3', 'list 4']
     },
     {
-        item: 'Menu 3',
-        list: ['list 1', 'list 2', 'list 3', 'list 4']
-    },
-    {
-        item: 'Menu 4',
+        item: 'Places to Visit',
         list: ['list 1', 'list 2', 'list 3', 'list 4']
     },
 ]

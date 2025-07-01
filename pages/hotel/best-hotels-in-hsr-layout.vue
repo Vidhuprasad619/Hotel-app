@@ -169,7 +169,7 @@ const sortedHotels = computed(() => {
     <div class="main-container bg-slate-50">
         <div class="max-container">
             <div class="border-b border-white/70 mb-5">
-                <h1 class="text-5xl text-black font-semibold mb-6">
+                <h1 class="text-5xl text-black font-semibold mb-2 pb-4">
                     Best Hotels in Koramangala
                 </h1>
                 <p class="pb-5">

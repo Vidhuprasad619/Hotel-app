@@ -27,6 +27,10 @@ useHead({
       content: 'https://in.bangaloretoday.in',
     },
     {
+      property: 'og:image',
+      content: '/images/ob-banner/bangalore.png',
+    },
+    {
       name: 'keywords',
       content: 'Bangalore, Bangalore Today, Bangalore Flights, Bangalore Getaways, Bangalore City Life, Bangalore Resorts, Bangalore Restaurants, Bangalore Hotels',
     },

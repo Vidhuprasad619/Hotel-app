@@ -8,4 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
   ssr: true,
+  nitro: {
+    preset: 'netlify'
+  }
 })

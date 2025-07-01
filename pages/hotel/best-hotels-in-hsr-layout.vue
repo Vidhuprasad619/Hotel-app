@@ -28,7 +28,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: '/images/ob-banner/bangalore.png',
+      content: '/images/og-banner/bangalore.png',
     },
     {
       name: 'keywords',

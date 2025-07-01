@@ -3,7 +3,7 @@ import HotelCard from '~/components/hotel/Card.vue'
 import HotelFilters from '~/components/hotel/Filters.vue'
 
 useHead({
-  title: 'Bangalore Today – Discover, Explore & Experience the City',
+  title: 'Best Hotels in Koramangala',
   link: [
     { rel: 'icon', href: '/images/logo/favicon.png' }
   ],
@@ -16,11 +16,11 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       name: 'description',
-      content: 'Bangalore Today – Your one-stop destination to find flights, getaways, city life, resorts, restaurants, and much more — all in one simple search.',
+      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru
     },
     {
       name: 'og:site_name',
-      content: 'Bangalore Today – Your one-stop destination to find flights, getaways, city life, resorts, restaurants, and much more — all in one simple search.',
+      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru
     },
     {
       name: 'og:url',
@@ -28,7 +28,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: '/images/ob-banner/bangalore.png',
+      content: '/images/og-banner/bangalore.png',
     },
     {
       name: 'keywords',

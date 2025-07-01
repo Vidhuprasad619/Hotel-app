@@ -18,7 +18,7 @@ const navItems = [
   {
     title: 'Services',
     items: [
-      { title: 'Web Development', href: '/services/web-development' },
+      { title: 'Hotels', href: '/hotel' },
       { title: 'Mobile Apps', href: '/services/mobile-apps' },
       { title: 'UI/UX Design', href: '/services/ui-ux-design' },
       { title: 'Consulting', href: '/services/consulting' },

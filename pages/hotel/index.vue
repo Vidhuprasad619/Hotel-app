@@ -1,13 +1,12 @@
 <script setup>
-import HotelCard from '~/components/hotel/Card.vue'
-import HotelFilters from '~/components/hotel/Filters.vue'
+import { computed, ref } from 'vue'
 
+// SEO Meta
 useHead({
-  title: 'Best Hotels in Bangalore',
+  title: 'Best Hotels in Bangalore - Bangalore Today',
   link: [
     { rel: 'icon', href: '/images/logo/favicon.png' },
   ],
-
   htmlAttrs: {
     lang: 'en',
   },
@@ -16,200 +15,355 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       name: 'description',
-      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru',
+      content: 'Discover the best hotels in Bangalore. From luxury stays to budget-friendly options, find the perfect accommodation for your trip to India\'s Silicon Valley.',
     },
     {
       name: 'og:site_name',
-      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru',
+      content: 'Bangalore Today',
     },
     {
       name: 'og:url',
-      content: 'https://in.bangaloretoday.in',
+      content: 'https://in.bangaloretoday.in/hotels',
     },
     {
       property: 'og:image',
-      content: '/images/og-banner/bangalore.png',
+      content: '/images/og-banner/bangalore-hotels.png',
     },
     {
       name: 'keywords',
-      content: 'Bangalore, Bangalore Today, Bangalore Flights, Bangalore Getaways, Bangalore City Life, Bangalore Resorts, Bangalore Restaurants, Bangalore Hotels',
+      content: 'Bangalore Hotels, Best Hotels Bangalore, Luxury Hotels Bangalore, Budget Hotels Bangalore, Business Hotels Bangalore',
     },
   ],
 })
 
-const activeSort = ref('Popular')
-
-const hotels = ref([
+// Hotel areas/categories data
+const hotelAreas = ref([
   {
     id: 1,
-    name: 'The Oberoi, Bengaluru',
-    location: ' 37-39, MG Rd, Yellappa Garden',
-    image: '/images/hotels/hotel1/best-hotels-in bangalore-1.jpg',
-    description: 'The Oberoi, one of the best hotels in Bangalore 2025, is a luxurious garden retreat on MG Road, built around a 100-year-old rain tree. With 160 rooms offering private balconies and lush views,.',
-    price: 21258,
-    rating: 4.5,
-    reviews: 167,
-    tags: ['Breakfast Included', 'MMT Luxe', 'Free Cancellation'],
+    title: 'Best Hotels in Bangalore',
+    slug: 'bangalore',
+    description: 'Discover luxury and comfort in Bangalore\'s finest hotels, from heritage properties to modern business hotels.',
+    image: '/images/hotels/areas/bangalore-general.jpg',
+    hotelCount: 25,
+    priceRange: '₹2,500 - ₹15,000',
+    featured: true,
+    tags: ['Business Hub', 'Shopping', 'Nightlife'],
   },
   {
     id: 2,
-    name: 'Taj Exotica Resort & Spa',
-    location: '99, Residency Rd, Shanthala Nagar, Bengaluru 560025',
-    image: '/images/hotels/hotel1/five.webp',
-    description: 'The Ritz-Carlton, among the best hotels in Bangalore, offers spacious rooms with intricate latticework, 1,200+ artworks, nine dining options including Riwaz, the rooftop bar Bang, and a 17,000-sqft spa—delivering luxury in the heart of the city.',
-    price: 28400,
-    rating: 4.7,
-    reviews: 210,
-    tags: ['Free Cancellation', 'MMT Luxe'],
+    title: 'Best Hotels in Koramangala',
+    slug: 'koramangala',
+    description: 'Stay in the heart of Bangalore\'s startup ecosystem with premium hotels and boutique stays in Koramangala.',
+    image: '/images/hotels/areas/koramangala.jpg',
+    hotelCount: 18,
+    priceRange: '₹3,000 - ₹12,000',
+    featured: true,
+    tags: ['Startup Hub', 'Restaurants', 'Tech Companies'],
   },
   {
     id: 3,
-    name: 'JW Marriott Hotel Bengaluru',
-    location: '24/1, Vittal Mallya Rd, KG Halli, BLR, 560001',
-    image: 'https://source.unsplash.com/500x300/?beach,maldives',
-    description: 'Overlooking Cubbon Park near UB City, this luxury hotel offers plush rooms, a temperature-controlled outdoor pool, and a soothing spa. Enjoy JW Kitchen’s Sunday brunch, European cuisine at Alba, and craft brews by the pool at Spice Terrace.',
-    price: 33000,
-    rating: 4.8,
-    reviews: 185,
-    tags: ['Breakfast Included', 'Private Beach', 'Luxury'],
+    title: 'Best Hotels in HSR Layout',
+    slug: 'hsr-layout',
+    description: 'Experience modern comfort in HSR Layout with contemporary hotels perfect for business and leisure travelers.',
+    image: '/images/hotels/areas/hsr-layout.jpg',
+    hotelCount: 15,
+    priceRange: '₹2,800 - ₹10,000',
+    featured: true,
+    tags: ['Residential', 'IT Corridor', 'Family Friendly'],
   },
   {
     id: 4,
-    name: 'The Leela Palace, Bengaluru',
-    location: 'Baa Atoll',
-    image: 'https://source.unsplash.com/500x300/?luxury,hotel',
-    description: 'A majestic property inspired by the Vijayanagara Empire, set on nine acres with rose-hued domes and lush gardens. Highlights include Royal Club suites with butler service, fine dining at Jamavar, Zen, Le Cirque, and the secret speakeasy ZLB 23.',
-    price: 45200,
-    rating: 5.0,
-    reviews: 198,
-    tags: ['Eco-Friendly', 'MMT Luxe', 'Private Pool'],
+    title: 'Best Hotels in Whitefield',
+    slug: 'whitefield',
+    description: 'Luxury accommodations in Bangalore\'s IT capital, close to major tech parks and entertainment venues.',
+    image: '/images/hotels/areas/whitefield.jpg',
+    hotelCount: 20,
+    priceRange: '₹3,500 - ₹18,000',
+    featured: false,
+    tags: ['IT Hub', 'Tech Parks', 'Modern'],
   },
   {
     id: 5,
-    name: 'Taj West End',
-    location: 'Dhaalu Atoll',
-    image: 'https://source.unsplash.com/500x300/?island,maldives',
-    description: 'Taj West End, among the best hotels in Bangalore 2025, is a colonial-style retreat established in 1887. Nestled in lush gardens, it offers heritage charm, the J Wellness Circle, and fine dining at Machan and Blue Ginger for a timeless escape.',
-    price: 58000,
-    rating: 4.9,
-    reviews: 230,
-    tags: ['Breakfast Included', 'Private Villas', 'Free Cancellation'],
+    title: 'Best Hotels in Indiranagar',
+    slug: 'indiranagar',
+    description: 'Vibrant neighborhood hotels perfect for exploring Bangalore\'s cultural scene and nightlife.',
+    image: '/images/hotels/areas/indiranagar.jpg',
+    hotelCount: 12,
+    priceRange: '₹2,200 - ₹8,500',
+    featured: false,
+    tags: ['Culture', 'Nightlife', 'Shopping'],
   },
   {
     id: 6,
-    name: 'ITC Gardenia',
-    location: '1, Residency Rd, Ashok Nagar, BLR, 560025',
-    image: 'https://source.unsplash.com/500x300/?tropical,maldives',
-    description: 'ITC Gardenia, a green haven reflecting Bengaluru’s spirit, blends eco-conscious luxury with artistic interiors and premium hospitality—perfect for those who value sustainability without compromising on style.',
-    price: 41000,
-    rating: 4.6,
-    reviews: 275,
-    tags: ['Luxury', 'Water Villas', 'Private Beach'],
+    title: 'Best Hotels in Electronic City',
+    slug: 'electronic-city',
+    description: 'Business-focused hotels in Electronic City, ideal for corporate travelers and tech professionals.',
+    image: '/images/hotels/areas/electronic-city.jpg',
+    hotelCount: 14,
+    priceRange: '₹2,000 - ₹9,000',
+    featured: false,
+    tags: ['Business', 'Corporate', 'Tech Hub'],
   },
   {
     id: 7,
-    name: 'Sheraton Grand Bangalore at Brigade Gateway',
-    location: ' 26/1, Malleswaram (adjacent to Orion Mall)',
-    image: 'https://source.unsplash.com/500x300/?tropical,hotel',
-    description: 'Located in Orion Mall and World Trade Centre, this hotel offers 230 rooms, an infinity pool, and diverse dining options—from Italian at Bene to rooftop Middle Eastern cuisine at The Persian Terrace, all paired with stunning views.',
-    price: 36900,
-    rating: 4.4,
-    reviews: 310,
-    tags: ['Free Cancellation', 'MMT Luxe', 'Water Villas'],
+    title: 'Best Hotels in MG Road',
+    slug: 'mg-road',
+    description: 'Heritage and luxury hotels on the iconic MG Road, perfect for shopping and business travelers.',
+    image: '/images/hotels/areas/mg-road.jpg',
+    hotelCount: 16,
+    priceRange: '₹4,000 - ₹20,000',
+    featured: false,
+    tags: ['Heritage', 'Shopping', 'Business'],
   },
   {
     id: 8,
-    name: 'Renaissance Bengaluru Race Course Hotel',
-    location: 'No 17 and 17/1, Race Course Rd, Madhava Nagar, BLR 560001',
-    image: '/images/hotels/hotel1/wayanad.jpg',
-    description: 'Just 500 meters from Bangalore Turf Club, this stylish hotel features chic rooms, a rooftop pool, and equestrian-inspired R Bar. The open-air dining at Lush and curated city experiences make it a hidden urban gem.',
-    price: 50300,
-    rating: 4.7,
-    reviews: 210,
-    tags: ['Underwater Dining', 'Private Pool', 'Breakfast Included'],
-  },
-  {
-    id: 9,
-    name: 'Conrad Bengaluru',
-    location: '25/3, Kensington Rd, Halasuru, BLR, 560008',
-    image: 'https://source.unsplash.com/500x300/?luxury,water-villa',
-    description: 'Soaring 24 stories above the Central Business District, Conrad offers elegant rooms with Ulsoor Lake views. Renowned for refined hospitality and upscale dining, it’s perfect for discerning travelers seeking luxury in the city’s heart.',
-    price: 42000,
-    rating: 4.8,
-    reviews: 160,
-    tags: ['Water Villas', 'Private Beach', 'Luxury'],
-  },
-  {
-    id: 10,
-    name: 'Taj MG Road, Bengaluru',
-    location: 'MG Road (near Trinity Circle)',
-    image: 'https://source.unsplash.com/500x300/?maldives,resort-luxury',
-    description: 'Set close to shopping and cultural hotspots, this contemporary Taj hotel blends comfort with elegance. Expect signature hospitality, scenic views, and a host of culinary delights.',
-    price: 49000,
-    rating: 4.6,
-    reviews: 185,
-    tags: ['Wellness', 'Private Villas', 'Free Cancellation'],
+    title: 'Best Hotels in Jayanagar',
+    slug: 'jayanagar',
+    description: 'Traditional charm meets modern comfort in Jayanagar\'s well-appointed hotels and guesthouses.',
+    image: '/images/hotels/areas/jayanagar.jpg',
+    hotelCount: 10,
+    priceRange: '₹1,800 - ₹6,000',
+    featured: false,
+    tags: ['Traditional', 'Residential', 'Family'],
   },
 ])
 
-const sortedHotels = computed(() => {
-  return [...hotels.value].sort((a, b) => {
-    switch (activeSort.value) {
-      case 'PriceLowToHigh':
-        return a.price - b.price
-      case 'PriceHighToLow':
-        return b.price - a.price
-      case 'Rating':
-        return b.rating - a.rating
-      default:
-        return 0 // Popular (default order)
-    }
-  })
+// Search and filter state
+const searchQuery = ref('')
+const selectedPriceRange = ref('all')
+const showFeaturedOnly = ref(false)
+
+// Computed filtered results
+const filteredAreas = computed(() => {
+  let filtered = hotelAreas.value
+
+  // Filter by search query
+  if (searchQuery.value) {
+    filtered = filtered.filter(area =>
+      area.title.toLowerCase().includes(searchQuery.value.toLowerCase())
+      || area.description.toLowerCase().includes(searchQuery.value.toLowerCase())
+      || area.tags.some(tag => tag.toLowerCase().includes(searchQuery.value.toLowerCase())),
+    )
+  }
+
+  // Filter by featured
+  if (showFeaturedOnly.value) {
+    filtered = filtered.filter(area => area.featured)
+  }
+
+  return filtered
 })
+
+// Navigation function
+function navigateToArea(slug) {
+  navigateTo(`/hotels/${slug}`)
+}
 </script>
 
 <template>
   <div class="main-container bg-slate-50">
     <div class="max-container">
-      <div class="border-b border-white/70 mb-5">
-        <h1 class="text-5xl text-black font-semibold mb-2 pb-4">
-          Best Hotels in Bangalore
-        </h1>
-        <p class="pb-5">
-          Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you're in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru Race Course Hotel, discover 20 of the best hotels in Bangalore that promise more than just a place to stay — they offer a gateway to the city's heart.
+      <!-- Hero Section -->
+      <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8 mb-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Discover the Best Hotels in Bangalore
+          </h1>
+          <p class="text-lg md:text-xl mb-6 opacity-90">
+            From luxury resorts to business hotels, find your perfect stay in India's Silicon Valley
+          </p>
+
+          <!-- Search Bar -->
+          <div class="max-w-md mx-auto">
+            <div class="relative">
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search by area or hotel type..."
+                class="w-full px-4 py-3 pl-12 text-gray-800 rounded-lg border-0 focus:ring-2 focus:ring-white/20 focus:outline-none"
+              >
+              <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Section -->
+      <div class="flex flex-wrap gap-4 items-center justify-between mb-8">
+        <div class="flex items-center gap-4">
+          <h2 class="text-2xl font-semibold text-gray-800">
+            Browse by Area
+          </h2>
+          <span class="text-sm text-gray-500">
+            {{ filteredAreas.length }} area{{ filteredAreas.length !== 1 ? 's' : '' }} found
+          </span>
+        </div>
+
+        <div class="flex gap-2">
+          <label class="flex items-center gap-2 text-sm">
+            <input
+              v-model="showFeaturedOnly"
+              type="checkbox"
+              class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            >
+            Featured Only
+          </label>
+        </div>
+      </div>
+
+      <!-- Featured Areas (if no search) -->
+      <div v-if="!searchQuery && !showFeaturedOnly" class="mb-12">
+        <h3 class="text-xl font-semibold text-gray-800 mb-6">
+          Featured Areas
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="area in hotelAreas.filter(a => a.featured)"
+            :key="area.id"
+            class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
+            @click="navigateToArea(area.slug)"
+          >
+            <div class="relative overflow-hidden rounded-t-xl">
+              <img
+                :src="area.image"
+                :alt="area.title"
+                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              >
+              <div class="absolute top-4 left-4">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                  Featured
+                </span>
+              </div>
+              <div class="absolute bottom-4 right-4">
+                <span class="bg-black/60 text-white text-sm px-2 py-1 rounded">
+                  {{ area.hotelCount }} Hotels
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <h4 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                {{ area.title }}
+              </h4>
+              <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                {{ area.description }}
+              </p>
+
+              <div class="flex items-center justify-between mb-4">
+                <div class="text-sm font-medium text-green-600">
+                  {{ area.priceRange }}
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="tag in area.tags"
+                  :key="tag"
+                  class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- All Areas Grid -->
+      <div class="mb-8">
+        <h3 v-if="!searchQuery && !showFeaturedOnly" class="text-xl font-semibold text-gray-800 mb-6">
+          All Areas
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div
+            v-for="area in filteredAreas"
+            :key="area.id"
+            class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer group"
+            @click="navigateToArea(area.slug)"
+          >
+            <div class="relative overflow-hidden rounded-t-xl">
+              <img
+                :src="area.image"
+                :alt="area.title"
+                class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+              >
+              <div v-if="area.featured" class="absolute top-3 left-3">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                  Featured
+                </span>
+              </div>
+              <div class="absolute bottom-3 right-3">
+                <span class="bg-black/60 text-white text-xs px-2 py-1 rounded">
+                  {{ area.hotelCount }} Hotels
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h4 class="text-base font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
+                {{ area.title }}
+              </h4>
+              <p class="text-gray-600 text-sm mb-3 leading-relaxed line-clamp-2">
+                {{ area.description }}
+              </p>
+
+              <div class="flex items-center justify-between mb-3">
+                <div class="text-sm font-medium text-green-600">
+                  {{ area.priceRange }}
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1">
+                <span
+                  v-for="tag in area.tags.slice(0, 2)"
+                  :key="tag"
+                  class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full"
+                >
+                  {{ tag }}
+                </span>
+                <span v-if="area.tags.length > 2" class="text-xs text-gray-400">
+                  +{{ area.tags.length - 2 }} more
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div v-if="filteredAreas.length === 0" class="text-center py-12">
+        <div class="text-gray-400 mb-4">
+          <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">
+          No areas found
+        </h3>
+        <p class="text-gray-500 mb-4">
+          Try adjusting your search or filters
         </p>
-      </div>
-      <!-- Sort & Title -->
-      <div class="mb-4 flex flex-col md:flex-row justify-between md:items-center gap-2">
-        <h2 class="text-lg font-semibold text-gray-800">
-          Showing Hoetels in Bangalore
-        </h2>
-        <div class="relative w-full md:w-fit text-sm">
-          <select v-model="activeSort" class="w-full border border-gray-300 rounded px-3 py-2 text-gray-700 cursor-pointer">
-            <option value="Popular">
-              Popular
-            </option>
-            <option value="Rating">
-              User Rating
-            </option>
-            <option value="PriceLowToHigh">
-              Price (Low to High)
-            </option>
-            <option value="PriceHighToLow">
-              Price (High to Low)
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row justify-between gap-6">
-        <HotelFilters />
-        <div class="space-y-4 ml-auto">
-          <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />
-        </div>
+        <button
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          @click="searchQuery = ''; showFeaturedOnly = false"
+        >
+          Clear Filters
+        </button>
       </div>
     </div>
   </div>
-  <div class="min-h-screen py-6" style="background-color: #f9fafb;">
-    <div class="max-w-7xl mx-auto px-4" />
-  </div>
 </template>
+
+<style scoped>
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>

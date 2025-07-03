@@ -209,7 +209,5 @@ const sortedHotels = computed(() => {
       </div>
     </div>
   </div>
-  <div class="min-h-screen py-6" style="background-color: #f9fafb;">
-    <div class="max-w-7xl mx-auto px-4" />
-  </div>
+
 </template>

@@ -43,9 +43,9 @@ const to = computed(() => {
 
 <template>
   <div
-    class="bg-cover bg-center bg-no-repeat w-full flex items-end cursor-pointer focus:outline-none focus:ring-2 focus:ring-white group"
+    class="w-full md:w-[30%] flex items-end cursor-pointer focus:outline-none focus:ring-2 focus:ring-white group"
   >
-    <NuxtLink :to="to" class="w-full h-full flex flex-col justify-start gap-y-5">
+    <NuxtLink :to="to" class="flex flex-col justify-start gap-y-5">
       <div class="w-full aspect-[9/7] relative overflow-hidden">
         <div class="h-[99%] w-[99%] pr-3 pt-3 bg-transparent overflow-hidden rounded-xl">
           <div

@@ -4,22 +4,22 @@ const hotels = ref([
     title: 'Best Hotels in Bangalore',
     description: 'Experience the best of Bangalore\'s hospitality, from luxurious escapes to smart urban stays. Discover the top 20 places to stay in the heart of the city.',
     date: 'March 3, 2025',
-    author: 'Harsha M',
-    image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
+    author: '',
+    image: '/images/hotels/hotel1/hotels-in-bangalore-home.jpeg',
   },
   {
     title: 'Best Hotels in Koramangala',
     description: 'Koramangala blends trendy vibes with comfortable stays. Explore handpicked hotels perfect for work or leisure in this buzzing neighborhood.',
     date: 'March 3, 2025',
-    author: 'Sudhir J Nair',
-    image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
+    author: '',
+    image: '/images/hotels/hotel1/hotels-in-bangalore-home1.png',
   },
   {
     title: 'Best Hotels in HSR Layout',
     description: 'HSR Layout offers a mix of calm and connectivity. These top-rated hotels bring you relaxation and accessibility right where it matters.',
     date: 'March 3, 2025',
-    author: 'Sharath Kumar JR',
-    image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
+    author: '',
+    image: '/images/hotels/hotel1/hotels-in-bangalore-home2.jpeg',
   },
 ])
 
@@ -54,7 +54,7 @@ function slugify(text) {
               <img
                 :src="hotel.image"
                 :alt="hotel.title"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
               >
             </div>
 

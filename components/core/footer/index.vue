@@ -32,14 +32,14 @@ const quickLinks = [
                     </div>
                     <div class="w-fit">
                         <h5 class="text-white text-sm md:text-base font-semibold mb-4">Contact Us</h5>
-                        <NuxtLink to="mailto:info@zipcode.iocod.com"
+                        <NuxtLink to="mailto:bangaloretoday@gmail.com"
                             class="text-white/80 text-sm md:text-base font-normal text-nowrap">
-                            info@zipcode.iocod.com
+                            bangaloretoday@gmail.com
                         </NuxtLink>
                     </div>
                 </div>
             </div>
-            <div class="py-4 md:py-6 text-center text-white/50 text-xs font-light">© 2025 ZIPCode API</div>
+            <div class="py-4 md:py-6 text-center text-white/50 text-xs font-light">© 2025 Bangalore Today</div>
         </div>
     </div>
 </template>

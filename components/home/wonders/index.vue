@@ -9,32 +9,32 @@ import {
 
 const data = [
     {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
+        img: '/images/hotels/hotel1/places-to-visit-in-bangalore1.jpg',
+        link: '/',
+        details: 'Places to Visit in Bangalore for couples'
+    },
+    {
+        img: '/images/hotels/hotel1/places-to-visit-in-bangalore2.jpg',
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
+        img: '/images/hotels/hotel1/places-to-visit-in-bangalore3.jpg',
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
+        img: '/images/hotels/hotel1/places-to-visit-in-bangalore4.jpg',
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
+        img: '/images/hotels/hotel1/places-to-visit-in-bangalore5.jpg',
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        link: '/',
-        details: 'Stays in & Around Delhi for a Weekend Getaway'
-    },
-    {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
+        img: '/images/hotels/hotel1/coorg.jpg',
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },

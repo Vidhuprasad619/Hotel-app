@@ -38,10 +38,10 @@ const activeSort = ref('Popular')
 const hotels = ref([
     {
         id: 1,
-        name: 'Olive zip Koramangala 4th block',
-        location: ' 4th Block, EXTENSION, Bengaluru, Karnataka 560095',
+        name: 'The Oberoi, Bengaluru',
+        location: ' 37-39, MG Rd, Yellappa Garden',
         image: '/images/hotels/hotel1/best-hotels-in bangalore-1.jpg',
-        description: 'Olive Zip offers clean, spacious rooms with modern amenities and balconies, ensuring a comfortable stay. Guests appreciate the friendly staff, well-maintained spaces, and prime location near major attractions and nightlife,.',
+        description: 'The Oberoi, one of the best hotels in Bangalore 2025, is a luxurious garden retreat on MG Road, built around a 100-year-old rain tree. With 160 rooms offering private balconies and lush views,.',
         price: 21258,
         rating: 4.5,
         reviews: 167,
@@ -170,7 +170,7 @@ const sortedHotels = computed(() => {
         <div class="max-container">
             <div class="border-b border-white/70 mb-5">
                 <h1 class="text-5xl text-black font-semibold mb-2">
-                    Best Hotels in Koramangala
+                    Best Hotels in Bangalore
                 </h1>
                 <p class="pb-5">
                     Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you're in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru Race Course Hotel, discover 20 of the best hotels in Bangalore that promise more than just a place to stay — they offer a gateway to the city's heart.

@@ -32,9 +32,9 @@ const quickLinks = [
                     </div>
                     <div class="w-fit">
                         <h5 class="text-white text-sm md:text-base font-semibold mb-4">Contact Us</h5>
-                        <NuxtLink to="mailto:info@zipcode.iocod.com"
+                        <NuxtLink to="mailto:contact@bangaloretoday.in"
                             class="text-white/80 text-sm md:text-base font-normal text-nowrap">
-                            info@zipcode.iocod.com
+                            contact@bangaloretoday.in
                         </NuxtLink>
                     </div>
                 </div>

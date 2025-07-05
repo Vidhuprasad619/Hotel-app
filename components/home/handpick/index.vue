@@ -10,73 +10,73 @@ import {
 
 const data = [
     {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        img: '/images/hotels/hotel1/resorts-in-bangalore1.jpg',
+        top: 10,
+        link: '/',
+        details: 'Stays in & Around Delhi for a Weekend Getaway'
+    },
+    {
+        img: '/images/hotels/hotel1/resorts-in-bangalore2.jpg',
+        top: 10,
+        link: '/',
+        details: '/images/hotels/hotel1/resorts-in-bangalore3.jpg'
+    },
+    {
+        img: '/images/hotels/hotel1/resorts-in-bangalore4.jpg',
+        top: 10,
+        link: '/',
+        details: 'Stays in & Around Delhi for a Weekend Getaway'
+    },
+    {
+        img: '/images/hotels/hotel1/resorts-in-bangalore5.jpg',
+        top: 10,
+        link: '/',
+        details: 'Stays in & Around Delhi for a Weekend Getaway'
+    },
+    {
+        img: '/images/hotels/hotel1/resorts-in-bangalore6.jpg',
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },
     {
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
-        link: '/',
-        details: 'Stays in & Around Delhi for a Weekend Getaway'
-    },
-    {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
-        link: '/',
-        details: 'Stays in & Around Delhi for a Weekend Getaway'
-    },
-    {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
-        link: '/',
-        details: 'Stays in & Around Delhi for a Weekend Getaway'
-    },
-    {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
-        link: '/',
-        details: 'Stays in & Around Delhi for a Weekend Getaway'
-    },
-    {
-        img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     },{
         img: 'https://platforms.makemytrip.com/contents/b945fe53-f41e-419a-9718-f36bbb6e23fe',
-        top: 8,
+        top: 10,
         link: '/',
         details: 'Stays in & Around Delhi for a Weekend Getaway'
     }

@@ -16,20 +16,21 @@ const openMobileDropdowns = ref<Set<string>>(new Set())
 // Navigation data
 const navItems = [
   {
-    title: 'Services',
+    title: 'Restaurants',
     items: [
-      { title: 'Web Development', href: '/services/web-development' },
-      { title: 'Mobile Apps', href: '/services/mobile-apps' },
-      { title: 'UI/UX Design', href: '/services/ui-ux-design' },
-      { title: 'Consulting', href: '/services/consulting' },
+      { title: 'Best Restaurants in Bangalore', href: '/restaurants/best-restaurants-in-bangalore' },
+      { title: 'Best Restaurants in Koramangala', href: '/restaurants/best-restaurants-in-koramangala' },
+      { title: 'Best Restaurants in HSR Layout', href: '/restaurants/best-restaurants-in-hsr-layout' },
+      { title: 'Best Restaurants in Devanahalli', href: '/restaurants/best-restaurants-in-devanahalli' },
     ],
   },
   {
-    title: 'Products',
+    title: 'Resorts',
     items: [
-      { title: 'SaaS Platform', href: '/products/saas-platform' },
-      { title: 'E-commerce Solution', href: '/products/ecommerce' },
-      { title: 'Analytics Tool', href: '/products/analytics' },
+      { title: 'Best Resorts in Bangalore', href: '/resorts/best-resorts-in-bangalore' },
+      { title: 'Adventure Resorts in Bangalore', href: '/resorts/best-adventure-resorts-in-bangalore' },
+      { title: 'Private Pool Resorts in Bangalore', href: '/resorts/best-private-pool-resorts-in-bangalore' },
+      { title: 'Resorts in Bangalore Outskirts', href: '/resorts/best-resorts-in-bangalore-outskirts' },
     ],
   },
   {

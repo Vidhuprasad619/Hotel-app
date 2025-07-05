@@ -1,4 +1,6 @@
 <script setup>
+
+// meta information for the page
 useHead({
   title: 'Bangalore Today – Discover, Explore & Experience the City',
   link: [
@@ -30,6 +32,7 @@ useHead({
   ],
 })
 
+// Hotel data
 const hotels = ref([
   {
     title: 'Best Hotels in Bangalore',
@@ -53,6 +56,10 @@ const hotels = ref([
     image: '/images/hotels/hotel1/hotels-in-bangalore-home2.jpeg',
   },
 ])
+
+function slugify(text) {
+  return text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+}
 </script>
 
 <template>

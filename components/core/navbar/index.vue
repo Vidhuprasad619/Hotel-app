@@ -18,8 +18,8 @@ const navItems = [
   {
     title: 'Services',
     items: [
+      { title: 'Hotel', href: '/hotel' },
       { title: 'Hotels', href: '/hotels' },
-      { title: 'Mobile Apps', href: '/services/mobile-apps' },
       { title: 'UI/UX Design', href: '/services/ui-ux-design' },
       { title: 'Consulting', href: '/services/consulting' },
     ],

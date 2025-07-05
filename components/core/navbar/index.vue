@@ -16,12 +16,22 @@ const openMobileDropdowns = ref<Set<string>>(new Set())
 // Navigation data
 const navItems = [
   {
+    title: 'Hotels',
+    items: [
+      { title: 'Best Hotels in Bangalore', href: '/hotel/best-hotels-in-bangalore' },
+      { title: 'Best Hotels in HSR Layout', href: '/hotel/best-hotels-in-hsr-layout' },
+      { title: 'Best Hotels in Koramangala', href: '/hotel/best-hotels-in-koramangala' },
+      { title: 'View all...', href: '/hotel' },
+    ],
+  },
+  {
     title: 'Restaurants',
     items: [
       { title: 'Best Restaurants in Bangalore', href: '/restaurants/best-restaurants-in-bangalore' },
       { title: 'Best Restaurants in Koramangala', href: '/restaurants/best-restaurants-in-koramangala' },
       { title: 'Best Restaurants in HSR Layout', href: '/restaurants/best-restaurants-in-hsr-layout' },
       { title: 'Best Restaurants in Devanahalli', href: '/restaurants/best-restaurants-in-devanahalli' },
+      { title: 'View all...', href: '/restaurants' },
     ],
   },
   {
@@ -31,15 +41,7 @@ const navItems = [
       { title: 'Adventure Resorts in Bangalore', href: '/resorts/best-adventure-resorts-in-bangalore' },
       { title: 'Private Pool Resorts in Bangalore', href: '/resorts/best-private-pool-resorts-in-bangalore' },
       { title: 'Resorts in Bangalore Outskirts', href: '/resorts/best-resorts-in-bangalore-outskirts' },
-    ],
-  },
-  {
-    title: 'Resources',
-    items: [
-      { title: 'Documentation', href: '/resources/docs' },
-      { title: 'Blog', href: '/resources/blog' },
-      { title: 'Tutorials', href: '/resources/tutorials' },
-      { title: 'Support', href: '/resources/support' },
+      { title: 'View all...', href: '/resorts' },
     ],
   },
 ]
@@ -82,6 +84,16 @@ function toggleMobileDropdown(title: string) {
 function closeSidebar() {
   isSidebarOpen.value = false
 }
+
+// Helper function to determine dropdown position
+function getDropdownPosition(index: number) {
+  // For the last item, position dropdown to the right
+  if (index === navItems.length - 1) {
+    return 'right-0'
+  }
+  // For other items, position to the left
+  return 'left-0'
+}
 </script>
 
 <template>
@@ -110,7 +122,7 @@ function closeSidebar() {
 
         <!-- Dropdown Items -->
         <div
-          v-for="navItem in navItems"
+          v-for="(navItem, index) in navItems"
           :key="navItem.title"
           class="relative"
           @mouseenter="showDropdown(navItem.title)"
@@ -131,7 +143,8 @@ function closeSidebar() {
           <!-- Dropdown Menu -->
           <div
             v-show="activeDropdown === navItem.title"
-            class="absolute top-full left-0 mt-1 w-56 rounded-md border bg-white p-1 shadow-md"
+            class="absolute top-full mt-1 w-56 rounded-md border bg-white p-1 shadow-md z-50"
+            :class="getDropdownPosition(index)"
             @mouseenter="cancelHideDropdown"
             @mouseleave="hideDropdown"
           >
@@ -156,11 +169,11 @@ function closeSidebar() {
               <span class="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" class="w-[300px] sm:w-[350px]">
+          <SheetContent side="left" class="w-[300px] sm:w-[350px] bg-white">
             <SheetHeader>
               <SheetTitle class="text-left">
                 <img
-                  src="https://via.placeholder.com/120x40/6366f1/ffffff?text=BRAND"
+                  src="/images/logo/logo.png"
                   alt="Brand Logo"
                   class="h-8 w-auto"
                 >

@@ -82,7 +82,7 @@ function slugify(text) {
           :key="hotel.title"
           class="bg-white rounded-[10px] shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200"
         >
-          <NuxtLink :to="`/hotels/${slugify(hotel.title)}`" class="block">
+          <NuxtLink :to="`/hotel/${slugify(hotel.title)}`" class="block">
             <!-- Image -->
             <div class="relative h-[192px] overflow-hidden">
               <img

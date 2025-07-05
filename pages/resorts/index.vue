@@ -32,24 +32,31 @@ useHead({
   ],
 })
 
-// Hotel data
-const hotels = ref([
+// Resorts data
+const resorts = ref([
   {
-    title: 'Best Hotels in Bangalore',
+    title: 'Best Adventure Resorts in Bangalore',
     description: 'Experience the best of Bangalore\'s hospitality, from luxurious escapes to smart urban stays. Discover the top 20 places to stay in the heart of the city.',
     date: 'March 3, 2025',
     author: '',
     image: '/images/hotels/hotel1/hotels-in-bangalore-home.jpeg',
   },
   {
-    title: 'Best Hotels in Koramangala',
+    title: 'Best Private Pool Resorts in Bangalore',
     description: 'Koramangala blends trendy vibes with comfortable stays. Explore handpicked hotels perfect for work or leisure in this buzzing neighborhood.',
     date: 'March 3, 2025',
     author: '',
     image: '/images/hotels/hotel1/hotels-in-bangalore-home1.png',
   },
   {
-    title: 'Best Hotels in HSR Layout',
+    title: 'Best Resorts in Bangalore Outskirts',
+    description: 'HSR Layout offers a mix of calm and connectivity. These top-rated hotels bring you relaxation and accessibility right where it matters.',
+    date: 'March 3, 2025',
+    author: '',
+    image: '/images/hotels/hotel1/hotels-in-bangalore-home2.jpeg',
+  },
+  {
+    title: 'Best Resorts in Bangalore',
     description: 'HSR Layout offers a mix of calm and connectivity. These top-rated hotels bring you relaxation and accessibility right where it matters.',
     date: 'March 3, 2025',
     author: '',
@@ -78,16 +85,16 @@ function slugify(text) {
       <!-- Hotels Grid -->
       <div class="card-grid">
         <article
-          v-for="hotel in hotels"
-          :key="hotel.title"
+          v-for="resort in resorts"
+          :key="resort.title"
           class="bg-white rounded-[10px] shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200"
         >
-          <NuxtLink :to="`/hotels/${slugify(hotel.title)}`" class="block">
+          <NuxtLink :to="`/resorts/${slugify(resort.title)}`" class="block">
             <!-- Image -->
             <div class="relative h-[192px] overflow-hidden">
               <img
-                :src="hotel.image"
-                :alt="hotel.title"
+                :src="resort.image"
+                :alt="resort.title"
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
               >
             </div>
@@ -95,15 +102,15 @@ function slugify(text) {
             <!-- Content -->
             <div class="p-4 sm:p-5">
               <div class="flex items-center text-xs text-gray-500 mb-2">
-                <span>{{ hotel.date }}</span>
+                <span>{{ resort.date }}</span>
               </div>
 
               <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-blue-600 transition-colors">
-                {{ hotel.title }}
+                {{ resort.title }}
               </h2>
 
               <p class="text-sm text-gray-600 mb-4 line-clamp-3">
-                {{ hotel.description }}
+                {{ resort.description }}
               </p>
 
               <!-- <div class="flex items-center justify-between text-xs text-gray-500">

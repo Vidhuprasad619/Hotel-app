@@ -32,8 +32,8 @@ useHead({
   ],
 })
 
-// Hotel data
-const hotels = ref([
+// Restaurants data
+const restaurants = ref([
   {
     title: 'Best Hotels in Bangalore',
     description: 'Experience the best of Bangalore\'s hospitality, from luxurious escapes to smart urban stays. Discover the top 20 places to stay in the heart of the city.',
@@ -68,26 +68,26 @@ function slugify(text) {
       <!-- Header -->
       <div class="text-center font-semibold pb-5">
         <h1>
-          Latest Hotel Guides
+          Latest Restaurants Guides
         </h1>
         <p class="pt-2 pb-5">
           Discover the best accommodation options across Bangalore's prime locations
         </p>
       </div>
 
-      <!-- Hotels Grid -->
+      <!-- Restaurants Grid -->
       <div class="card-grid">
         <article
-          v-for="hotel in hotels"
-          :key="hotel.title"
+          v-for="restaurant in restaurants"
+          :key="restaurant.title"
           class="bg-white rounded-[10px] shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-200"
         >
-          <NuxtLink :to="`/hotels/${slugify(hotel.title)}`" class="block">
+          <NuxtLink :to="`/restaurants/${slugify(restaurant.title)}`" class="block">
             <!-- Image -->
             <div class="relative h-[192px] overflow-hidden">
               <img
-                :src="hotel.image"
-                :alt="hotel.title"
+                :src="restaurant.image"
+                :alt="restaurant.title"
                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
               >
             </div>
@@ -95,21 +95,21 @@ function slugify(text) {
             <!-- Content -->
             <div class="p-4 sm:p-5">
               <div class="flex items-center text-xs text-gray-500 mb-2">
-                <span>{{ hotel.date }}</span>
+                <span>{{ restaurant.date }}</span>
               </div>
 
               <h2 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-blue-600 transition-colors">
-                {{ hotel.title }}
+                {{ restaurant.title }}
               </h2>
 
               <p class="text-sm text-gray-600 mb-4 line-clamp-3">
-                {{ hotel.description }}
+                {{ restaurant.description }}
               </p>
 
               <!-- <div class="flex items-center justify-between text-xs text-gray-500">
                 <div class="flex items-center">
                   <span>Author: </span>
-                  <span class="font-medium text-gray-700 ml-1">{{ hotel.author }}</span>
+                  <span class="font-medium text-gray-700 ml-1">{{ restaurant.author }}</span>
                 </div>
               </div> -->
             </div>

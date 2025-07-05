@@ -21,27 +21,6 @@ const hotels = ref([
     author: 'Sharath Kumar JR',
     image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
   },
-  {
-    title: 'Luxury Stays in Whitefield',
-    description: 'Whitefield offers premium accommodation options for business travelers and tourists. Discover upscale hotels with modern amenities.',
-    date: 'March 2, 2025',
-    author: 'Harsha M',
-    image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
-  },
-  {
-    title: 'Budget-Friendly Hotels in Indiranagar',
-    description: 'Indiranagar provides excellent value accommodation without compromising on comfort. Perfect for budget-conscious travelers.',
-    date: 'March 2, 2025',
-    author: 'Sudhir J Nair',
-    image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
-  },
-  {
-    title: 'Business Hotels in Electronic City',
-    description: 'Electronic City caters to corporate travelers with world-class business hotels equipped with conference facilities and premium services.',
-    date: 'March 1, 2025',
-    author: 'Harsha M',
-    image: '/images/hotels/hotel1/best-hotels-in-bangalore.jpg',
-  },
 ])
 
 function slugify(text) {

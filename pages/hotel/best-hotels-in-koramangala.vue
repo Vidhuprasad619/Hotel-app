@@ -3,9 +3,9 @@ import HotelCard from '~/components/hotel/Card.vue'
 import HotelFilters from '~/components/hotel/Filters.vue'
 
 useHead({
-  title: 'Bangalore Today – Discover, Explore & Experience the City',
+  title: 'Best Hotels in Koramangala',
   link: [
-    { rel: 'icon', href: '/images/logo/favicon.png' }
+    { rel: 'icon', href: '/images/logo/favicon.png' },
   ],
 
   htmlAttrs: {
@@ -16,15 +16,19 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       name: 'description',
-      content: 'Bangalore Today – Your one-stop destination to find flights, getaways, city life, resorts, restaurants, and much more — all in one simple search.',
+      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru',
     },
     {
       name: 'og:site_name',
-      content: 'Bangalore Today – Your one-stop destination to find flights, getaways, city life, resorts, restaurants, and much more — all in one simple search.',
+      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru',
     },
     {
       name: 'og:url',
       content: 'https://in.bangaloretoday.in',
+    },
+    {
+      property: 'og:image',
+      content: '/images/og-banner/bangalore.png',
     },
     {
       name: 'keywords',
@@ -149,57 +153,61 @@ const hotels = ref([
 ])
 
 const sortedHotels = computed(() => {
-    return [...hotels.value].sort((a, b) => {
-        switch (activeSort.value) {
-            case 'PriceLowToHigh':
-                return a.price - b.price
-            case 'PriceHighToLow':
-                return b.price - a.price
-            case 'Rating':
-                return b.rating - a.rating
-            default:
-                return 0 // Popular (default order)
-        }
-    })
+  return [...hotels.value].sort((a, b) => {
+    switch (activeSort.value) {
+      case 'PriceLowToHigh':
+        return a.price - b.price
+      case 'PriceHighToLow':
+        return b.price - a.price
+      case 'Rating':
+        return b.rating - a.rating
+      default:
+        return 0 // Popular (default order)
+    }
+  })
 })
-
 </script>
 
 <template>
-    <div class="main-container bg-slate-50">
-        <div class="max-container">
-            <div class="border-b border-white/70 mb-5">
-                <h1 class="text-5xl text-black font-semibold mb-2">
-                    Best Hotels in Koramangala
-                </h1>
-                <p class="pb-5">
-                    Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you're in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru Race Course Hotel, discover 20 of the best hotels in Bangalore that promise more than just a place to stay — they offer a gateway to the city's heart.
-                </p>
-            </div>
-            <!-- Sort & Title -->
-            <div class="mb-4 flex flex-col md:flex-row justify-between md:items-center gap-2">
-                <h2 class="text-lg font-semibold text-gray-800">Showing Hoetels in Bangalore</h2>
-                <div class="relative w-full md:w-fit text-sm">
-                    <select v-model="activeSort" class="w-full border border-gray-300 rounded px-3 py-2 text-gray-700 cursor-pointer">
-                        <option value="Popular">Popular</option>
-                        <option value="Rating">User Rating</option>
-                        <option value="PriceLowToHigh">Price (Low to High)</option>
-                        <option value="PriceHighToLow">Price (High to Low)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between gap-6">
-                <HotelFilters />
-                <div class="space-y-4 ml-auto">
-                    <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />
-                </div>
-                
-            </div>
+  <div class="main-container bg-slate-50">
+    <div class="max-container">
+      <div class="border-b border-white/70 mb-5">
+        <h1 class="text-5xl text-black font-semibold mb-2 pb-4">
+          Best Hotels in Koramangala
+        </h1>
+        <p class="pb-5">
+          Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you're in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru Race Course Hotel, discover 20 of the best hotels in Bangalore that promise more than just a place to stay — they offer a gateway to the city's heart.
+        </p>
+      </div>
+      <!-- Sort & Title -->
+      <div class="mb-4 flex flex-col md:flex-row justify-between md:items-center gap-2">
+        <h2 class="text-lg font-semibold text-gray-800">
+          Showing Hoetels in Bangalore
+        </h2>
+        <div class="relative w-full md:w-fit text-sm">
+          <select v-model="activeSort" class="w-full border border-gray-300 rounded px-3 py-2 text-gray-700 cursor-pointer">
+            <option value="Popular">
+              Popular
+            </option>
+            <option value="Rating">
+              User Rating
+            </option>
+            <option value="PriceLowToHigh">
+              Price (Low to High)
+            </option>
+            <option value="PriceHighToLow">
+              Price (High to Low)
+            </option>
+          </select>
         </div>
-    </div>
-    <div class="min-h-screen py-6" style="background-color: #f9fafb;">
-        <div class="max-w-7xl mx-auto px-4">
-            
+      </div>
+      <div class="flex flex-col md:flex-row justify-between gap-6">
+        <HotelFilters />
+        <div class="space-y-4 ml-auto">
+          <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />
         </div>
+      </div>
     </div>
+  </div>
+
 </template>

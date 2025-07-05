@@ -39,7 +39,7 @@ const quickLinks = [
                     </div>
                 </div>
             </div>
-            <div class="py-4 md:py-6 text-center text-white/50 text-xs font-light">© 2025 ZIPCode API</div>
+            <div class="py-4 md:py-6 text-center text-white/50 text-xs font-light">© 2025 Bangalore Today</div>
         </div>
     </div>
 </template>

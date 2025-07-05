@@ -3,7 +3,7 @@ useHead({
   title: 'Bangalore Today – Discover, Explore & Experience the City',
   titleTemplate: (title?: string) => `${title}`,
   link: [
-    { rel: 'icon', href: '/images/logo/favicon.png' }
+    { rel: 'icon', type: 'image/png', href: '/images/logo/favicon.png' },
   ],
 
   htmlAttrs: {
@@ -19,6 +19,10 @@ useHead({
     {
       name: 'og:site_name',
       content: 'Bangalore Today – Your one-stop destination to find flights, getaways, city life, resorts, restaurants, and much more — all in one simple search.',
+    },
+    {
+      property: 'og:image',
+      content: '/images/logo/favicon.png',
     },
     {
       name: 'og:url',

@@ -3,7 +3,7 @@ import HotelCard from '~/components/hotel/Card.vue'
 import HotelFilters from '~/components/hotel/Filters.vue'
 
 useHead({
-  title: 'Bangalore Today – Discover, Explore & Experience the City',
+  title: 'Best Resorts in Bangalore Outskirts',
   link: [
     { rel: 'icon', href: '/images/logo/favicon.png' }
   ],

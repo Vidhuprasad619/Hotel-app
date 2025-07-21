@@ -2,6 +2,42 @@
 import HotelCard from '~/components/hotel/Card.vue'
 import HotelFilters from '~/components/hotel/Filters.vue'
 
+
+useHead({
+  title: 'Best Restaurants in HSR Layout',
+  link: [
+    { rel: 'icon', href: '/images/logo/favicon.png' },
+  ],
+
+  htmlAttrs: {
+    lang: 'en',
+  },
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      name: 'description',
+      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru',
+    },
+    {
+      name: 'og:site_name',
+      content: 'Experience the Best Hotels in Bangalore — where the city’s vibrant culture, cutting-edge innovation, and cosmopolitan energy come alive. These handpicked stays combine comfort, charm, and top-tier service to create truly unforgettable experiences. Whether you\'re in town for business, leisure, or a mix of both, Bangalore’s top hotels deliver excellence at every turn. From iconic luxury like The Oberoi, Bengaluru to contemporary elegance at Renaissance Bengaluru',
+    },
+    {
+      name: 'og:url',
+      content: 'https://in.bangaloretoday.in',
+    },
+    {
+      property: 'og:image',
+      content: '/images/og-banner/bangalore.png',
+    },
+    {
+      name: 'keywords',
+      content: 'Bangalore, Bangalore Today, Bangalore Flights, Bangalore Getaways, Bangalore City Life, Bangalore Resorts, Bangalore Restaurants, Bangalore Hotels',
+    },
+  ],
+})
+
 const activeSort = ref('Popular')
 
 const hotels = ref([

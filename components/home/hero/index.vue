@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 // import Combobox from '~/components/ui/Combobox.vue';
 import Polaroid from '~/components/ui/Polaroid.vue'
 
